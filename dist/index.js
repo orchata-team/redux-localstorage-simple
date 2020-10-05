@@ -345,7 +345,7 @@ function save() {
             states.forEach(function (state) {
               var key = namespace + namespaceSeparator + state;
               var stateForLocalStorage = getStateForLocalStorage(state, state_);
-              if (stateForLocalStorage) {
+              if (stateForLocalStorage || stateForLocalStorage === 0) {
                 storage.setItem(key, stateForLocalStorage);
               } else {
                 // Make sure nothing is ever saved for this incorrect state

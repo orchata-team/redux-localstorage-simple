@@ -313,7 +313,7 @@ export function save ({
         states.forEach(state => {
           const key = namespace + namespaceSeparator + state
           const stateForLocalStorage = getStateForLocalStorage(state, state_)
-          if (stateForLocalStorage) {
+          if (stateForLocalStorage || stateForLocalStorage === 0) {
             storage.setItem(key, stateForLocalStorage)
           } else {
             // Make sure nothing is ever saved for this incorrect state
