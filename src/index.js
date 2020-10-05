@@ -408,7 +408,7 @@ export function load ({
     states.forEach(function (state) {
       const key = namespace + namespaceSeparator + state
       const val = storage.getItem(key)
-      if (val) {
+      if (val || val === 0) {
         loadedState = objectMerge(loadedState, realiseObject(state, val))
       } else {
         warn_("Invalid load '" + key + "' provided. Check your 'states' in 'load()'. If this is your first time running this app you may see this message. To disable it in future use the 'disableWarnings' flag, see documentation.")

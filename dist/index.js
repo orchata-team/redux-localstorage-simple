@@ -450,7 +450,7 @@ function load() {
     states.forEach(function (state) {
       var key = namespace + namespaceSeparator + state;
       var val = storage.getItem(key);
-      if (val) {
+      if (val || val === 0) {
         loadedState = (0, _objectMerge2.default)(loadedState, realiseObject(state, val));
       } else {
         warn_("Invalid load '" + key + "' provided. Check your 'states' in 'load()'. If this is your first time running this app you may see this message. To disable it in future use the 'disableWarnings' flag, see documentation.");
